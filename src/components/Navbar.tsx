@@ -88,7 +88,7 @@ const Navbar = () => {
             </button>
 
             <Button variant="hero" size="sm" asChild>
-              <a href="/CVEmnaOuerghemmi.pdf" download="CV_Emna_Ouerghemmi.pdf">
+              <a href="/CvEmna_Ouerghemmi1.pdf" download="CV_Emna_Ouerghemmi.pdf">
                 Télécharger CV
               </a>
             </Button>
@@ -137,7 +137,7 @@ const Navbar = () => {
                 </a>
               ))}
               <Button variant="hero" size="sm" className="w-full mt-2" asChild>
-                <a href="/CVEmnaOuerghemmi.pdf" download="CV_Emna_Ouerghemmi.pdf">
+                <a href="/CvEmna_Ouerghemmi1.pdf" download="CV_Emna_Ouerghemmi.pdf">
                   Télécharger CV
                 </a>
               </Button>
