@@ -12,7 +12,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
-      const sections = ["about", "projects", "contact"];
+      const sections = ["about", "experience", "projects", "contact"];
       for (const id of sections.reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 120) {
@@ -28,6 +28,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "#about", label: "À propos", id: "about" },
+    { href: "#experience", label: "Expérience", id: "experience" },
     { href: "#projects", label: "Projets", id: "projects" },
     { href: "#contact", label: "Contact", id: "contact" },
   ];
@@ -98,8 +99,8 @@ const Navbar = () => {
             <a
               href="/CvEmna_Ouerghemmi1.pdf"
               download="CV_Emna_Ouerghemmi.pdf"
-              className="group flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_hsl(189_94%_53%_/_0.4)]"
-              style={{ background: "var(--gradient-cta)" }}
+              className="group flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgb(13_148_136_/_0.45)]"
+              style={{ background: "var(--cv-button)" }}
             >
               <Download className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
               Télécharger CV
@@ -147,7 +148,7 @@ const Navbar = () => {
                 href="/CvEmna_Ouerghemmi1.pdf"
                 download="CV_Emna_Ouerghemmi.pdf"
                 className="mt-2 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold text-white"
-                style={{ background: "var(--gradient-cta)" }}
+                style={{ background: "var(--cv-button)" }}
               >
                 <Download className="w-4 h-4" />
                 Télécharger CV
