@@ -22,14 +22,14 @@ const Contact = () => {
     { icon: Mail, color: "hsl(189 94% 53%)", label: "Email", value: "emna.ouerghemmi@esprit.tn", href: "mailto:emna.ouerghemmi@esprit.tn" },
     { icon: Phone, color: "hsl(258 90% 66%)", label: "Téléphone", value: "+216 51 865 355", href: "tel:+21651865355" },
     { icon: MapPin, color: "hsl(239 90% 66%)", label: "Localisation", value: "Tunis, Tunisie", href: undefined },
-    { icon: Calendar, color: "hsl(189 94% 53%)", label: "Disponibilité", value: "Stage PFE • 6 mois", href: undefined },
+    { icon: Calendar, color: "hsl(189 94% 53%)", label: "Disponibilité", value: "Ouverte aux opportunités", href: undefined },
   ];
 
   const inputClass = (name: string) =>
-    `w-full px-4 py-3.5 rounded-xl text-sm bg-[hsl(220_25%_8%)] border transition-all duration-300 outline-none ${
+    `w-full px-4 py-3.5 rounded-xl text-sm bg-input border transition-all duration-300 outline-none ${
       focused === name
         ? "border-[hsl(189_94%_53%_/_0.6)] shadow-[0_0_0_3px_hsl(189_94%_53%_/_0.1)]"
-        : "border-[hsl(220_20%_18%)] hover:border-[hsl(220_20%_24%)]"
+        : "border-border hover:border-[hsl(var(--muted-foreground)_/_0.4)]"
     } placeholder:text-muted-foreground/40`;
 
   return (
@@ -49,7 +49,7 @@ const Contact = () => {
           </h2>
           <div className="flex items-center justify-center gap-3">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-[hsl(189_94%_53%)]" />
-            <p className="text-muted-foreground text-sm">Intéressé par mon profil ? Discutons d'opportunités de stage PFE</p>
+            <p className="text-muted-foreground text-sm">Un projet, un poste ou une mission freelance ? Discutons-en</p>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-[hsl(258_90%_66%)]" />
           </div>
         </div>
@@ -102,11 +102,11 @@ const Contact = () => {
             <div className="p-5 rounded-2xl border border-[hsl(189_94%_53%_/_0.2)] relative overflow-hidden"
               style={{ background: "hsl(189 94% 53% / 0.05)" }}>
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[hsl(189_94%_53%_/_0.08)] blur-2xl pointer-events-none" />
-              <p className="font-display font-semibold text-sm mb-2 text-[hsl(189_94%_75%)]">
-                🎯 Recherche stage PFE
+              <p className="font-display font-semibold text-sm mb-2 text-highlight">
+                🎯 Ouverte aux opportunités
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Passionnée par l'IA collaborative, les architectures RAG et les systèmes multi-agents. Prête à contribuer à des projets innovants.
+                Ingénieure Full-Stack & IA, ouverte aux postes comme aux missions freelance. Passionnée par l'IA collaborative, les architectures RAG et les systèmes multi-agents.
               </p>
             </div>
           </div>
@@ -155,7 +155,7 @@ const Contact = () => {
                 required
                 rows={7}
                 className={`${inputClass("message")} resize-none`}
-                placeholder="Décrivez votre opportunité de stage, votre projet ou votre question..."
+                placeholder="Décrivez votre projet, votre opportunité ou votre question..."
               />
             </div>
 

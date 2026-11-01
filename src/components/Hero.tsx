@@ -2,9 +2,9 @@ import { Github, Linkedin, Mail, Download, MapPin, ArrowRight, Sparkles } from "
 import { useState, useEffect } from "react";
 
 const ROLES = [
-  "Full-Stack Developer",
+  "Full-Stack Engineer",
   "AI Integration Engineer",
-  "Python & Angular Expert",
+  "Freelance Developer",
   "Multi-Agent Systems Builder",
 ];
 
@@ -69,7 +69,7 @@ const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
               </span>
-              <span className="text-sm font-medium text-muted-foreground">Disponible • Stage PFE 6 mois</span>
+              <span className="text-sm font-medium text-muted-foreground">Ingénieure • Ouverte aux opportunités</span>
               <Sparkles className="w-3.5 h-3.5 text-[hsl(189_94%_53%)]" />
             </div>
 
@@ -104,7 +104,7 @@ const Hero = () => {
               <MapPin className="w-4 h-4 text-[hsl(189_94%_53%)]" />
               <span>Tunis, Tunisie</span>
               <span className="text-border">•</span>
-              <span className="font-medium text-foreground">ESPRIT — 5ème année</span>
+              <span className="font-medium text-foreground">Ingénieure — ESPRIT</span>
             </div>
 
             {/* Tags */}
@@ -129,8 +129,8 @@ const Hero = () => {
             >
               <a
                 href="#contact"
-                className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(189_94%_53%_/_0.45)]"
-                style={{ background: 'var(--gradient-cta)' }}
+                className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgb(139_92_246_/_0.45)]"
+                style={{ background: 'var(--gradient-contact)' }}
               >
                 <span className="relative z-10 flex items-center gap-2 text-white">
                   <Mail className="w-4 h-4" />
@@ -172,9 +172,10 @@ const Hero = () => {
               <a
                 href="/CvEmna_Ouerghemmi1.pdf"
                 download="CV_Emna_Ouerghemmi.pdf"
-                className="group inline-flex items-center gap-2 px-4 py-3 rounded-xl glass border border-[hsl(220_20%_18%)] hover:border-[hsl(258_90%_66%_/_0.5)] hover:shadow-[0_0_20px_hsl(258_90%_66%_/_0.3)] transition-all duration-300 text-sm font-medium text-muted-foreground hover:text-foreground"
+                className="group inline-flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white hover:scale-105 hover:shadow-[0_0_20px_rgb(13_148_136_/_0.45)] transition-all duration-300"
+                style={{ background: "var(--cv-button)" }}
               >
-                <Download className="w-4 h-4 group-hover:text-[hsl(258_90%_72%)] transition-colors" />
+                <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
                 CV
               </a>
             </div>

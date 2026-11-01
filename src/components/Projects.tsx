@@ -1,4 +1,4 @@
-import { Github, Filter, X, ChevronLeft, ChevronRight, ExternalLink, Layers } from "lucide-react";
+import { Github, Filter, X, ChevronLeft, ChevronRight, ExternalLink, Layers, Globe } from "lucide-react";
 import { useState } from "react";
 
 type TechFilter = "all" | "react" | "angular" | "nodejs" | "springboot" | "python";
@@ -12,6 +12,7 @@ interface Project {
   techFilter: TechFilter[];
   image: string;
   github: string;
+  demo?: string;
   features: string[];
   screenshots: string[];
   badge?: string;
@@ -32,6 +33,33 @@ const Projects = () => {
   ];
 
   const projects: Project[] = [
+    {
+      id: "piqbit",
+      title: "PIQBIT",
+      description: "Plateforme de recrutement intelligente assistée par IA : du dépôt du CV à la signature du contrat, avec scoring explicable, prédiction salariale et aide à la décision.",
+      longDescription: "PIQBIT est une plateforme web de recrutement (ATS) réalisée comme projet de fin d'études sur 6 mois, qui numérise l'ensemble du processus : publication d'offres, candidature, test technique, entretiens, décision, négociation salariale et signature électronique du contrat. Côté IA, un classifieur TF-IDF + régression logistique vérifie qu'un document déposé est bien un CV (exactitude 97,2 %, F1 0,94), le CV est analysé puis noté de façon explicable par rapport à l'offre, et un modèle Gradient Boosting retenu parmi 8 candidats estime une fourchette de salaire du marché tunisien (MAE ≈ 402 TND, R² 0,89). Les appels LLM passent par un routeur qui garde les données personnelles sur un modèle local (Ollama) et réserve Claude / Gemini aux données non sensibles, avec observabilité Langfuse. Le principe directeur : l'IA propose, l'humain décide. La plateforme est livrée avec 750 tests backend, une CI GitHub Actions (Semgrep, Gitleaks, Lighthouse) et un déploiement Docker.",
+      tags: ["Angular", "FastAPI", "PostgreSQL", "pgvector", "Redis", "Scikit-learn", "Ollama", "Claude", "Gemini", "WebSocket", "Docker", "GitHub Actions"],
+      techFilter: ["python", "angular"],
+      image: "/Piqbit/image1.png",
+      github: "#",
+      badge: "PFE · 6 mois",
+      features: ["Scoring CV explicable", "Détection de CV (F1 0,94)", "Prédiction salariale (R² 0,89)", "Test technique chronométré", "Entretiens Google Meet", "Négociation temps réel", "Signature électronique", "LLM local pour données sensibles"],
+      screenshots: ["/Piqbit/image1.png", "/Piqbit/image 2.png", "/Piqbit/image 3.png", "/Piqbit/image 4.png", "/Piqbit/image 5.png"],
+    },
+    {
+      id: "lesrangs",
+      title: "LesRangs",
+      description: "Plateforme de recrutement dédiée aux métiers de l'hôtellerie-restauration (CHR) : offres, vivier de talents, entretiens vidéo et messagerie temps réel.",
+      longDescription: "LesRangs est une plateforme de recrutement spécialisée CHR (cafés, hôtels, restaurants) que j'ai développée en freelance sur 6 mois, de la conception à la mise en production. Elle combine l'accompagnement d'une agence et un outil digital : espaces candidat, établissement, agence et super-admin, missions ponctuelles ou abonnement premium avec accès au vivier de talents, tableaux de bord et suivi des candidatures. Les entretiens se déroulent en visioconférence intégrée (LiveKit SFU, avec repli WebRTC pair à pair), la messagerie et les notifications sont en temps réel via Socket.IO, et l'agenda se synchronise avec Google Calendar. La plateforme intègre aussi le parsing de CV PDF/DOCX, l'import Excel de candidats et d'établissements, la géolocalisation des établissements avec temps de trajet et arrêts de transport proches (Leaflet, Nominatim, OSRM, Overpass), et un déploiement continu via GitHub Actions.",
+      tags: ["React", "Node.js", "Express", "MySQL", "Socket.IO", "LiveKit", "WebRTC", "Tailwind CSS", "Google OAuth", "Cloudinary", "GitHub Actions"],
+      techFilter: ["react", "nodejs"],
+      image: "/LesRangs/image 1.png",
+      github: "#",
+      demo: "https://lesrangs.com",
+      badge: "Freelance · 6 mois",
+      features: ["Entretiens vidéo LiveKit", "Chat temps réel", "Vivier de talents", "Abonnements", "Agenda Google Calendar", "Cartes & temps de trajet", "Parsing de CV", "Import Excel"],
+      screenshots: ["/LesRangs/image 1.png", "/LesRangs/image 2.png", "/LesRangs/image 3.png", "/LesRangs/image 4.png", "/LesRangs/image 5.png"],
+    },
     {
       id: "analyse-dash-ai",
       title: "AnalyseDashAI",
@@ -60,19 +88,6 @@ const Projects = () => {
         "/FileAnalyser/image14.png",
         "/FileAnalyser/image15.png",
       ],
-    },
-    {
-      id: "piqbit",
-      title: "PIQBIT",
-      description: "Plateforme intelligente de négociation salariale assistée par IA avec modèle Random Forest et agents autonomes pour optimiser les offres d'emploi.",
-      longDescription: "PIQBIT est une plateforme intelligente de négociation salariale assistée par IA qui utilise des modèles d'apprentissage automatique et des agents autonomes pour aider les candidats à optimiser leurs offres d'emploi. Le projet combine un backend Python/FastAPI avec un modèle Random Forest entraîné sur 521 échantillons couvrant plus de 45 postes dans 8 catégories (Data Science, Ingénierie Logiciel, DevOps, Product Management, Management, etc.), et un frontend Angular pour l'interface utilisateur. Le système automatise l'évaluation des offres salariales, simule les négociations avec les employeurs en temps réel via WebSocket, et fournit des recommandations basées sur les données du marché pour guider les utilisateurs dans leurs décisions de carrière.",
-      tags: ["Python", "FastAPI", "Angular", "Random Forest", "WebSocket", "Machine Learning", "PostgreSQL"],
-      techFilter: ["python", "angular"],
-      image: "/Piqbit/image1.png",
-      github: "#",
-      badge: "PFE 2026",
-      features: ["Random Forest ML", "Négociation WebSocket", "45+ Postes", "Agents Autonomes"],
-      screenshots: ["/Piqbit/image1.png"],
     },
     {
       id: "chatbot-rag",
@@ -253,14 +268,6 @@ const Projects = () => {
               className="group relative rounded-2xl overflow-hidden glass border border-[hsl(220_20%_16%)] hover:border-[hsl(189_94%_53%_/_0.4)] hover:shadow-[0_0_50px_hsl(189_94%_53%_/_0.12)] transition-all duration-500 cursor-pointer"
               style={{ animationDelay: `${index * 0.08}s` }}
             >
-              {/* Badge */}
-              {project.badge && (
-                <div className="absolute top-3 right-3 z-20 px-2.5 py-1 rounded-lg text-xs font-bold text-white shadow-lg"
-                  style={{ background: "var(--gradient-cta)" }}>
-                  {project.badge}
-                </div>
-              )}
-
               {/* Image */}
               <div className="relative overflow-hidden h-48">
                 <img
@@ -268,14 +275,14 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220_25%_7%)] via-[hsl(220_25%_7%_/_0.3)] to-transparent" />
+                <div className="absolute inset-0 image-fade" />
 
                 {/* Feature badges */}
                 <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
                   {project.features.slice(0, 2).map((f) => (
                     <span
                       key={f}
-                      className="px-2 py-1 text-[10px] font-semibold rounded-md glass border border-[hsl(220_20%_22%)] text-[hsl(189_94%_75%)]"
+                      className="px-2 py-1 text-[10px] font-semibold rounded-md image-badge"
                     >
                       {f}
                     </span>
@@ -285,7 +292,7 @@ const Projects = () => {
                 {/* Hover overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ background: "hsl(189 94% 53% / 0.12)" }}>
-                  <div className="px-4 py-2 rounded-xl glass border border-[hsl(189_94%_53%_/_0.4)] text-sm font-medium text-[hsl(189_94%_80%)]">
+                  <div className="px-4 py-2 rounded-xl glass border border-[hsl(189_94%_53%_/_0.4)] text-sm font-medium text-highlight">
                     Voir les détails →
                   </div>
                 </div>
@@ -293,7 +300,7 @@ const Projects = () => {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="font-display font-bold text-base mb-2 group-hover:text-[hsl(189_94%_70%)] transition-colors">
+                <h3 className="font-display font-bold text-base mb-2 group-hover:text-[color:var(--accent-cyan)] transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-muted-foreground text-xs leading-relaxed mb-4 line-clamp-2">
@@ -305,13 +312,13 @@ const Projects = () => {
                   {project.tags.slice(0, 4).map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 text-[10px] rounded-lg bg-[hsl(220_20%_12%)] border border-[hsl(220_20%_20%)] text-muted-foreground"
+                      className="px-2.5 py-1 text-[10px] rounded-lg chip"
                     >
                       {tag}
                     </span>
                   ))}
                   {project.tags.length > 4 && (
-                    <span className="px-2.5 py-1 text-[10px] rounded-lg bg-[hsl(220_20%_12%)] border border-[hsl(220_20%_20%)] text-muted-foreground">
+                    <span className="px-2.5 py-1 text-[10px] rounded-lg chip">
                       +{project.tags.length - 4}
                     </span>
                   )}
@@ -344,8 +351,8 @@ const Projects = () => {
           onClick={closeProject}
         >
           <div
-            className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-2xl border border-[hsl(220_20%_18%)] shadow-[0_0_80px_hsl(189_94%_53%_/_0.2)]"
-            style={{ background: "hsl(220 25% 6%)" }}
+            className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-2xl border border-border shadow-[0_0_80px_hsl(189_94%_53%_/_0.2)]"
+            style={{ background: "hsl(var(--card))" }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close */}
@@ -388,7 +395,7 @@ const Projects = () => {
 
             {/* Thumbnails */}
             {selectedProject.screenshots.length > 1 && (
-              <div className="flex gap-2 px-4 py-3 overflow-x-auto border-b border-[hsl(220_20%_14%)]">
+              <div className="flex gap-2 px-4 py-3 overflow-x-auto border-b border-border">
                 {selectedProject.screenshots.map((s, i) => (
                   <button
                     key={i}
@@ -432,12 +439,7 @@ const Projects = () => {
                   {selectedProject.features.map((f) => (
                     <span
                       key={f}
-                      className="px-3 py-1.5 rounded-lg text-xs font-semibold border"
-                      style={{
-                        background: "hsl(189 94% 53% / 0.08)",
-                        borderColor: "hsl(189 94% 53% / 0.25)",
-                        color: "hsl(189 94% 70%)",
-                      }}
+                      className="px-3 py-1.5 rounded-lg text-xs font-semibold feature-chip"
                     >
                       ✓ {f}
                     </span>
@@ -455,7 +457,7 @@ const Projects = () => {
                   {selectedProject.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 rounded-lg text-xs border border-[hsl(220_20%_20%)] bg-[hsl(220_20%_10%)] text-muted-foreground"
+                      className="px-3 py-1 rounded-lg text-xs chip"
                     >
                       {tag}
                     </span>
@@ -465,6 +467,19 @@ const Projects = () => {
 
               {/* Actions */}
               <div className="flex gap-3 flex-wrap">
+                {selectedProject.demo && (
+                  <a
+                    href={selectedProject.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-[0_0_30px_hsl(189_94%_53%_/_0.4)]"
+                    style={{ background: "var(--gradient-cta)" }}
+                  >
+                    <Globe className="w-4 h-4" />
+                    Voir le site
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
                 {selectedProject.github !== "#" && (
                   <a
                     href={selectedProject.github}

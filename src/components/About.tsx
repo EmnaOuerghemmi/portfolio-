@@ -6,7 +6,7 @@ const About = () => {
       icon: Brain,
       title: "IA & LLMs",
       color: "hsl(189 94% 53%)",
-      items: ["Python Avancé", "LangChain / LlamaIndex", "RAG Architecture", "OpenAI / Gemini APIs", "NLP & Embeddings"],
+      items: ["Python Avancé", "LangChain / LlamaIndex", "RAG Architecture", "Claude / Gemini / Ollama", "NLP & Embeddings"],
     },
     {
       icon: Server,
@@ -18,13 +18,13 @@ const About = () => {
       icon: Database,
       title: "Data & DB",
       color: "hsl(239 90% 66%)",
-      items: ["PostgreSQL", "MongoDB", "FAISS / ChromaDB", "ETL Pipelines", "Pandas / Scikit-learn"],
+      items: ["PostgreSQL / pgvector", "MySQL / MongoDB", "Redis", "FAISS / ChromaDB", "Pandas / Scikit-learn"],
     },
     {
       icon: Wrench,
       title: "Frontend & DevOps",
       color: "hsl(189 94% 53%)",
-      items: ["React", "Angular", "Docker", "Git / GitHub", "AWS"],
+      items: ["React", "Angular", "Docker", "CI/CD GitHub Actions", "AWS"],
     },
   ];
 
@@ -32,7 +32,7 @@ const About = () => {
     { value: "7+", label: "Projets IA", sub: "multi-agents" },
     { value: "23+", label: "Agents IA", sub: "orchestrés" },
     { value: "4", label: "Stages", sub: "en entreprise" },
-    { value: "5ème", label: "Année", sub: "ESPRIT" },
+    { value: "3", label: "Projets pro", sub: "PFE & freelance" },
   ];
 
   return (
@@ -76,14 +76,18 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-5">
               <p className="text-base text-muted-foreground leading-relaxed">
-                Étudiante en{" "}
-                <span className="font-semibold text-foreground">5ème année d'ingénierie informatique</span>{" "}
-                à ESPRIT, spécialisée en développement web. Je suis passionnée par la construction de systèmes intelligents combinant le full-stack moderne et l'intelligence artificielle.
+                <span className="font-semibold text-foreground">Ingénieure en informatique</span>{" "}
+                diplômée d'ESPRIT, spécialisée en développement web. Je conçois des systèmes intelligents combinant le full-stack moderne et l'intelligence artificielle.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Mon expertise couvre le développement d'applications avec{" "}
                 <span className="font-semibold text-foreground">React, Angular, Spring Boot, FastAPI</span>{" "}
-                et l'intégration de pipelines IA avancés (RAG, multi-agents, LLMs). 
+                et l'intégration de pipelines IA avancés (RAG, multi-agents, LLMs).
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                J'ai réalisé mon projet de fin d'études sur{" "}
+                <span className="font-semibold text-foreground">PIQBIT</span>, une plateforme de recrutement assistée par IA, et développé en freelance{" "}
+                <span className="font-semibold text-foreground">LesRangs</span>, une plateforme de recrutement dédiée à l'hôtellerie-restauration — deux projets de 6 mois menés de la conception à la mise en production.
               </p>
             </div>
 
@@ -93,7 +97,7 @@ const About = () => {
                 {
                   icon: GraduationCap,
                   color: "hsl(189 94% 53%)",
-                  title: "ESPRIT — Cycle Ingénieur",
+                  title: "ESPRIT — Diplôme d'Ingénieur en Informatique",
                   sub: "Développement Web • 2023 – 2026 • Tunis",
                 },
                 {

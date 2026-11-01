@@ -49,6 +49,13 @@
     --gradient-text: linear-gradient(135deg, hsl(189 94% 60%) 0%, hsl(239 90% 72%) 50%, hsl(258 90% 72%) 100%);
     --gradient-border: linear-gradient(135deg, hsl(189 94% 53%), hsl(258 90% 66%));
     --gradient-cta: linear-gradient(135deg, hsl(239 90% 60%) 0%, hsl(189 94% 48%) 100%);
+    --gradient-contact: linear-gradient(135deg, #6557F5 0%, #8B5CF6 100%);
+    --cv-button: #0D9488;
+
+    /* Accent text colors, darkened in light mode to stay readable */
+    --accent-cyan: hsl(189 94% 53%);
+    --accent-violet: hsl(258 90% 66%);
+    --accent-indigo: hsl(239 90% 66%);
 
     --font-display: 'Space Grotesk', 'Sora', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -101,6 +108,10 @@
     --gradient-text: linear-gradient(135deg, hsl(239 84% 55%) 0%, hsl(258 90% 60%) 100%);
     --gradient-border: linear-gradient(135deg, hsl(239 84% 60%), hsl(258 90% 60%));
     --gradient-cta: linear-gradient(135deg, hsl(239 84% 58%) 0%, hsl(258 90% 58%) 100%);
+
+    --accent-cyan: hsl(189 94% 26%);
+    --accent-violet: hsl(258 70% 50%);
+    --accent-indigo: hsl(239 70% 52%);
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 222 47% 10%;
@@ -187,6 +198,60 @@
     background: hsl(0 0% 100% / 0.85);
     border: 1px solid hsl(214 25% 80% / 0.5);
   }
+
+  /* Tech chips */
+  .chip {
+    background: hsl(220 20% 12%);
+    border: 1px solid hsl(220 20% 20%);
+    color: hsl(var(--muted-foreground));
+  }
+
+  .light .chip {
+    background: hsl(214 32% 95%);
+    border-color: hsl(214 25% 84%);
+    color: hsl(222 35% 28%);
+  }
+
+  /* Badges laid over project screenshots */
+  .image-badge {
+    background: hsl(220 25% 8% / 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(220 20% 22%);
+    color: hsl(189 94% 75%);
+  }
+
+  .light .image-badge {
+    background: hsl(0 0% 100% / 0.95);
+    border-color: hsl(239 84% 60% / 0.25);
+    color: hsl(239 84% 45%);
+    box-shadow: 0 2px 8px hsl(222 47% 10% / 0.12);
+  }
+
+  /* Fade at the bottom of project screenshots, blending into the card */
+  .image-fade {
+    background: linear-gradient(to top, hsl(220 25% 7%), hsl(220 25% 7% / 0.3), transparent);
+  }
+
+  .light .image-fade {
+    background: linear-gradient(to top, hsl(0 0% 100% / 0.85), hsl(0 0% 100% / 0.15) 45%, transparent);
+  }
+
+  /* Feature chips in the project modal */
+  .feature-chip {
+    background: hsl(189 94% 53% / 0.08);
+    border: 1px solid hsl(189 94% 53% / 0.25);
+    color: hsl(189 94% 70%);
+  }
+
+  .light .feature-chip {
+    background: hsl(239 84% 60% / 0.08);
+    border-color: hsl(239 84% 60% / 0.25);
+    color: hsl(239 84% 45%);
+  }
+
+  .text-highlight { color: hsl(189 94% 75%); }
+  .light .text-highlight { color: hsl(239 84% 50%); }
 
   /* Gradient border trick */
   .border-gradient {
